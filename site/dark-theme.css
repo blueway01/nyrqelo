@@ -1,0 +1,90 @@
+html { color-scheme: light; }
+html[data-theme="dark"] { color-scheme: dark; }
+
+html[data-theme="dark"] body {
+  color: #edf4ff;
+  background: #07111f;
+}
+
+html[data-theme="dark"] .topbar {
+  background: rgba(7, 17, 31, .92);
+  border-color: #26364d;
+}
+
+html[data-theme="dark"] .brand small,
+html[data-theme="dark"] .intro-copy > p:not(.overline),
+html[data-theme="dark"] .intro-summary span,
+html[data-theme="dark"] .capability-visual span,
+html[data-theme="dark"] .capability-grid p,
+html[data-theme="dark"] .support-copy > p:not(.overline),
+html[data-theme="dark"] .privacy p,
+html[data-theme="dark"] .footer p,
+html[data-theme="dark"] .sample-note {
+  color: #aebdd3;
+}
+
+html[data-theme="dark"] .language,
+html[data-theme="dark"] .view-switch {
+  background: #17243a;
+}
+
+html[data-theme="dark"] .language button.active,
+html[data-theme="dark"] .view-switch button.active {
+  color: #f5f8ff;
+  background: #2a3a54;
+  box-shadow: none;
+}
+
+html[data-theme="dark"] .intro-summary,
+html[data-theme="dark"] .intro-summary div,
+html[data-theme="dark"] .capability-grid article,
+html[data-theme="dark"] .privacy,
+html[data-theme="dark"] .footer {
+  border-color: #26364d;
+}
+
+html[data-theme="dark"] .app-stage {
+  background: linear-gradient(150deg, #0d1a2d, #091322);
+}
+
+html[data-theme="dark"] .app-window,
+html[data-theme="dark"] .callout,
+html[data-theme="dark"] .capability-visual {
+  color: #edf4ff;
+  background: #111f33;
+  border-color: #2a3b54;
+  box-shadow: 0 28px 75px rgba(0, 0, 0, .34);
+}
+
+html[data-theme="dark"] .callout small {
+  color: #aebdd3;
+}
+
+html[data-theme="dark"] .capability-grid i {
+  color: #83b3ff;
+  background: #172a48;
+}
+
+html[data-theme="dark"] .support {
+  border-color: #26364d;
+}
+
+html[data-theme="dark"] .support-facts {
+  color: #edf4ff;
+}
+
+html[data-theme="dark"] .privacy a {
+  color: #82b1ff;
+}
+
+html[data-theme="dark"] .workflow {
+  background: #020914;
+}
+
+html[data-theme="dark"] .window-top small {
+  color: #aebdd3;
+}
+
+html[data-theme="dark"] .capability-visual > div {
+  color: #edf4ff;
+}
