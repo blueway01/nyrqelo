@@ -125,7 +125,11 @@
         <h2 id="contact-title" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</h2>
         <p data-ja="必要事項を入力して、このページから直接送信できます。" data-en="Complete the form and send your inquiry directly from this page.">必要事項を入力して、このページから直接送信できます。</p>
       </div>
-      <form class="contact-form" data-contact-form>
+      <form class="contact-form" data-contact-form action="https://formsubmit.co/ikoibito@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="NYRQELOお問合せ">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://nyrqelo.vercel.app/?sent=1#contact">
+        <input type="hidden" name="_autoresponse" data-autoresponse value="Thank you for contacting NYRQELO for Bluesky. Your inquiry has been received. We will review your message and reply to you separately.">
         <input class="contact-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label>
           <span data-ja="お名前" data-en="Name">お名前</span>
@@ -141,7 +145,7 @@
         </label>
         <button type="submit" data-ja="送信する" data-en="Send inquiry">送信する</button>
         <p class="contact-status" data-contact-status role="status" aria-live="polite"></p>
-        <small data-ja="送信先：ikoibito@gmail.com／件名：NYRQELOお問合せ。入力内容は送信処理のためFormSubmitへ送信されます。" data-en="Recipient: ikoibito@gmail.com / Subject: NYRQELOお問合せ. Form data is transmitted to FormSubmit for delivery.">送信先：ikoibito@gmail.com／件名：NYRQELOお問合せ。入力内容は送信処理のためFormSubmitへ送信されます。</small>
+        <small data-ja="送信先：ikoibito@gmail.com／件名：NYRQELOお問合せ。送信後、フォームに入力したメールアドレスへ受付完了メールを自動返信します。入力内容は送信処理のためFormSubmitへ送信されます。" data-en="Recipient: ikoibito@gmail.com / Subject: NYRQELOお問合せ. After submission, an automatic confirmation email is sent to the email address entered in the form. Form data is transmitted to FormSubmit for delivery.">送信先：ikoibito@gmail.com／件名：NYRQELOお問合せ。送信後、フォームに入力したメールアドレスへ受付完了メールを自動返信します。入力内容は送信処理のためFormSubmitへ送信されます。</small>
       </form>
     </section>
   </main>

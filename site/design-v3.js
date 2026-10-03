@@ -52,54 +52,28 @@ document.querySelectorAll('[data-lang]').forEach((button) => button.addEventList
 document.querySelectorAll('[data-view]').forEach((button) => button.addEventListener('click', () => setView(button.dataset.view)));
 
 document.querySelector('[data-contact-form]').addEventListener('submit', (event) => {
-  event.preventDefault();
   const form = event.currentTarget;
-  const formData = new FormData(form);
   const button = form.querySelector('button[type="submit"]');
   const status = form.querySelector('[data-contact-status]');
   const lang = state.lang;
-  const payload = {
-    name: String(formData.get('name') || '').trim(),
-    email: String(formData.get('email') || '').trim(),
-    message: String(formData.get('message') || '').trim(),
-    _subject: 'NYRQELOお問合せ',
-    _template: 'table',
-    _honey: String(formData.get('_honey') || '')
-  };
+  const autoresponse = form.querySelector('[data-autoresponse]');
+
+  autoresponse.value = lang === 'ja'
+    ? 'お問い合わせを送信いただき、ありがとうございます。NYRQELO for Blueskyへのお問い合わせを受け付けました。内容を確認のうえ、改めて返信いたします。'
+    : 'Thank you for contacting NYRQELO for Bluesky. Your inquiry has been received. We will review your message and reply to you separately.';
 
   button.disabled = true;
   status.className = 'contact-status';
   status.textContent = lang === 'ja' ? '送信しています…' : 'Sending…';
-
-  fetch('https://formsubmit.co/ajax/ikoibito@gmail.com', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json'
-    },
-    body: JSON.stringify(payload)
-  })
-    .then((response) => {
-      if (!response.ok) throw new Error('送信要求が失敗しました');
-      return response.json();
-    })
-    .then(() => {
-      form.reset();
-      status.classList.add('success');
-      status.textContent = lang === 'ja'
-        ? 'お問い合わせを受け付けました。'
-        : 'Your inquiry has been submitted.';
-    })
-    .catch(() => {
-      status.classList.add('error');
-      status.textContent = lang === 'ja'
-        ? '送信できませんでした。時間をおいて再度お試しください。'
-        : 'The inquiry could not be sent. Please try again later.';
-    })
-    .finally(() => {
-      button.disabled = false;
-    });
 });
 
 setLanguage('en');
 setView('dark');
+
+if (new URLSearchParams(window.location.search).get('sent') === '1') {
+  const status = document.querySelector('[data-contact-status]');
+  status.classList.add('success');
+  status.textContent = state.lang === 'ja'
+    ? 'お問い合わせを送信しました。受付確認メールをご確認ください。'
+    : 'Your inquiry has been sent. Please check your email for confirmation.';
+}
