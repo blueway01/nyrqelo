@@ -34,6 +34,10 @@ function setLanguage(lang) {
   document.title = lang === 'ja'
     ? 'NYRQELO for Bluesky｜好きな投稿を、そっと保存。'
     : 'NYRQELO for Bluesky | Save posts. Find them later.';
+  const description = lang === 'ja'
+    ? 'NYRQELO for Bluesky — Blueskyの投稿を保存、検索、整理できるChrome拡張機能。'
+    : 'NYRQELO for Bluesky saves selected posts in your browser. Search text, accounts, hashtags and notes, restore JSON backups, and export PDF reports.';
+  document.querySelector('meta[name="description"]').content = description;
   refreshPreview();
 }
 
